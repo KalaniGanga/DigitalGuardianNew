@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PatientProfile">
+    <LinearLayout
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="300dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:text="Sweda Larsson"
+                    android:layout_width="300dp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+                    <LinearLayout android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/room"
+                            android:layout_height="wrap_content"
+                            android:layout_width="100dp"
+                            android:textStyle="bold"
+                            android:textSize="20dp"
+                            android:text="Room" />
+                        <TextView
+                            android:id="@+id/age"
+                            android:layout_height="wrap_content"
+                            android:layout_width="100dp"
+                            android:textStyle="bold"
+                            android:textSize="20dp"
+                            android:text="Age" />
+                        <TextView
+                            android:id="@+id/index"
+                            android:layout_height="wrap_content"
+                            android:layout_width="100dp"
+                            android:textStyle="bold"
+                            android:textSize="20dp"
+                            android:text="ID"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/room1"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="20dp"
+                            android:text="- 01"
+                            android:layout_width="wrap_content"/>
+                        <TextView
+                            android:id="@+id/age1"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="20dp"
+                            android:text="- 81"
+                            android:layout_width="wrap_content"/>
+                        <TextView
+                            android:id="@+id/index1"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textSize="20dp"
+                            android:text="- 12341234"
+                            android:layout_width="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:src="@drawable/old_women_1"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/bpm"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:text="BPM"
+                    android:textAlignment="center"
+                    android:layout_width="195dp"/>
+                <TextView
+                    android:id="@+id/temp"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="30dp"
+                    android:text="Temp"
+                    android:layout_width="195dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/bpm1"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="#4F22B5"
+                    android:textSize="30dp"
+                    android:text="91"
+                    android:textAlignment="center"
+                    android:layout_width="195dp"
+                    android:gravity="center_horizontal" />
+                <TextView
+                    android:id="@+id/temp1"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="30dp"
+                    android:textColor="#4F22B5"
+                    android:text="31C"
+                    android:layout_width="195dp"
+                    android:gravity="center_horizontal" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/phycon"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="Physical Condition"
+                android:layout_width="match_parent"/>
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:id="@+id/phycon1"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:text="Physical health is defined as the condition of your body, taking into consideration everything from the absence of disease to fitness level. Physical health is critical for overall well-being, and can be affected by: Lifestyle: diet, level of physical activity, and behaviour (for instance, smoking);"
+                android:layout_width="match_parent"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/medcon"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="Medical History"
+                android:layout_width="match_parent"/>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                >
+                <TableRow>
+                    <TextView
+                        android:textSize="16dp"
+                        android:layout_column="1"
+                        android:text="• "></TextView>
+                    <TextView
+                        android:textSize="16dp"
+                        android:layout_column="2"
+                        android:layout_width="wrap_content"
+                        android:text="Diebetes"></TextView>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_column="1"
+                        android:text="• "></TextView>
+                    <TextView
+                        android:layout_column="2"
+                        android:layout_width="wrap_content"
+                        android:text="Heart Deseases"></TextView>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_column="1"
+                        android:text="• "></TextView>
+                    <TextView
+                        android:layout_column="2"
+                        android:layout_width="wrap_content"
+                        android:text="Thyroid Problems"></TextView>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_column="1"
+                        android:text="• "></TextView>
+                    <TextView
+                        android:layout_column="2"
+                        android:layout_width="wrap_content"
+                        android:text="Eating Desorder"></TextView>
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

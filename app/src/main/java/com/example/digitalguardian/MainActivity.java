@@ -2,8 +2,12 @@ package com.example.digitalguardian;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -14,16 +18,43 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     private MqttAndroidClient client;
     private static final String SERVER_URI = "tcp://test.mosquitto.org:1883";
     private static final String TAG = "MainActivity";
+    private ArrayList<Patient> patientList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        patientList = new ArrayList<>();
+        patientList.add(new Patient("12341234","Sweda Larsson",01,31,"this is test","Female", R.drawable.old_women_1,98));
+        patientList.add(new Patient("56782345","Mark Karlsson",02,34,"this is test", "Male", R.drawable.old_man_1,91));
+        patientList.add(new Patient("90126745","Lucas Jonsson",03,37,"this is test","Male", R.drawable.old_man_2,92));
+        patientList.add(new Patient("12341234","Sweda Larsson",01,31,"this is test","Female", R.drawable.old_women_1,101));
+        patientList.add(new Patient("56782345","Mark Karlsson",02,34,"this is test", "Male", R.drawable.old_man_1,90));
+        patientList.add(new Patient("90126745","Lucas Jonsson",03,37,"this is test","Male", R.drawable.old_man_2,109));
+        System.out.println(patientList);
+
+        //setting adapter and listview
+        PatientAdapter adapter = new PatientAdapter(getApplicationContext(),
+                R.layout.activity_listview, patientList);
+        ListView listview = findViewById(R.id.patient_list);
+        listview.setAdapter(adapter);
+        listview.setScrollContainer(true);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                System.out.println(i);
+                System.out.println(l);
+                startActivity(new Intent(MainActivity.this, PatientProfile.class));
+
+            }
+        });
         connect();
 
         client.setCallback(new MqttCallbackExtended() {
