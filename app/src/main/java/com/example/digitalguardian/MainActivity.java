@@ -55,41 +55,41 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        connect();
+        //connect();
 
-        client.setCallback(new MqttCallbackExtended() {
-            @Override
-            public void connectComplete(boolean reconnect, String serverURI) {
-                if (reconnect) {
-                    System.out.println("Reconnected to : " + serverURI);
-                    // Re-subscribe as we lost it due to new session
-                    subscribe("iot/pk/rgbvalues");
-                } else {
-                    System.out.println("Connected to: " + serverURI);
-                    subscribe("iot/pk/rgbvalues");
-                }
-            }
-            @Override
-            public void connectionLost(Throwable cause) {
-                System.out.println("The Connection was lost.");
-            }
-            @Override
-            public void messageArrived(String topic, MqttMessage message) throws
-                    Exception {
-                String newMessage = new String(message.getPayload());
-                System.out.println("Incoming message: " + newMessage);
-
-                 /* add code here to interact with elements
-                 (text views, buttons)
-                 using data from newMessage
-                 */
-
-
-            }
-            @Override
-            public void deliveryComplete(IMqttDeliveryToken token) {
-            }
-        });
+//        client.setCallback(new MqttCallbackExtended() {
+//            @Override
+//            public void connectComplete(boolean reconnect, String serverURI) {
+//                if (reconnect) {
+//                    System.out.println("Reconnected to : " + serverURI);
+//                    // Re-subscribe as we lost it due to new session
+//                    subscribe("iot/pk/rgbvalues");
+//                } else {
+//                    System.out.println("Connected to: " + serverURI);
+//                    subscribe("iot/pk/rgbvalues");
+//                }
+//            }
+//            @Override
+//            public void connectionLost(Throwable cause) {
+//                System.out.println("The Connection was lost.");
+//            }
+//            @Override
+//            public void messageArrived(String topic, MqttMessage message) throws
+//                    Exception {
+//                String newMessage = new String(message.getPayload());
+//                System.out.println("Incoming message: " + newMessage);
+//
+//                 /* add code here to interact with elements
+//                 (text views, buttons)
+//                 using data from newMessage
+//                 */
+//
+//
+//            }
+//            @Override
+//            public void deliveryComplete(IMqttDeliveryToken token) {
+//            }
+//        });
 
     }
 

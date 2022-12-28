@@ -13,13 +13,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DigitalGuardian">
-        <activity android:name=".PatientProfile"></activity>
+        <activity android:name=".HomeActivity"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".MainActivity" /> <!-- <activity -->
+        <!-- android:name=".LoginActivity" -->
+        <!-- android:theme="@style/Theme.AppCompat.NoActionBar" /> -->
+        <activity android:name=".PatientProfile" />
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
 
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
