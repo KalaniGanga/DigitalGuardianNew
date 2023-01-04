@@ -38,7 +38,7 @@
 
             <EditText
                 android:hint="User Name"
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/patientName"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -47,7 +47,7 @@
 
             <EditText
                 android:hint="Password"
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/addPassword"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:ems="10"

@@ -23,7 +23,13 @@ public class PatientProfile extends AppCompatActivity {
         Intent intent = getIntent();
         // Get the data of the activity providing the same key value
         String patientId = intent.getStringExtra("patient_id");
-        selectedPatient = dbHandler.getPatientDetails(patientId);
+        String userName = intent.getStringExtra("patient_userName");
+
+        if(patientId == null || patientId == ""){
+            selectedPatient = dbHandler.getPatientDetailsByUsername(userName);
+        }else {
+            selectedPatient = dbHandler.getPatientDetails(patientId);
+        }
         name = findViewById(R.id.name);
         roomNo = findViewById(R.id.roomNo);
         age = findViewById(R.id.patientAge);

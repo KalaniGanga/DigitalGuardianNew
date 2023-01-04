@@ -18,7 +18,19 @@
             android:fastScrollAlwaysVisible="true"
             android:id="@+id/patient_list"/>
     </LinearLayout>
-
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#266f82"
+            android:text="New Patient Register" />
+    </LinearLayout>
 
 
 

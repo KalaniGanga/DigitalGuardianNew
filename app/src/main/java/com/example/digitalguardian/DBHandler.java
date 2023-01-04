@@ -22,6 +22,11 @@ public class DBHandler extends SQLiteOpenHelper{
     private static final String INDEX_COL = "id";
     private static final String NAME_COL = "name";
     private static final String GENDER_COL = "gender";
+    private static final String AGE_COL = "age";
+    private static final String EMAIL_COL = "email";
+    private static final String PHONE_COL = "phone";
+    private static final String BPM_COL = "bpm";
+    private static final String TEMP_COL = "temperature";
     private static final String DESCRIPTION_COL = "description";
     private static final String ROOM_NO_COL = "roomNumber";
     private static final String USER_NAME = "userName";
@@ -43,8 +48,13 @@ public class DBHandler extends SQLiteOpenHelper{
                 + INDEX_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + NAME_COL + " TEXT,"
                 + GENDER_COL + " TEXT,"
+                + AGE_COL + " INTEGER,"
                 + DESCRIPTION_COL + " TEXT,"
                 + ROOM_NO_COL + " INTEGER,"
+                + EMAIL_COL + " TEXT,"
+                + PHONE_COL + " TEXT,"
+                + BPM_COL + " INTEGER,"
+                + TEMP_COL + " INTEGER,"
                 + USER_NAME + " TEXT,"
                 + PASSWORD + " TEXT)";
 
@@ -54,7 +64,7 @@ public class DBHandler extends SQLiteOpenHelper{
     }
 
     // this method is use to add new course to our sqlite database.
-    public void addNewPatient(String patientName, String password) {
+    public void addNewPatient(Patient patient) {
 
         // on below line we are creating a variable for
         // our sqlite database and calling writable method
@@ -65,12 +75,15 @@ public class DBHandler extends SQLiteOpenHelper{
         // variable for content values.
         ContentValues values = new ContentValues();
 
-        // on below line we are passing all values
-        // along with its key and value pair.
-        values.put(NAME_COL, patientName);
-//        values.put(DURATION_COL, courseDuration);
-        values.put(DESCRIPTION_COL, password);
-//        values.put(TRACKS_COL, courseTracks);
+        values.put(NAME_COL, patient.getName());
+        values.put(GENDER_COL, patient.getGender());
+        values.put(AGE_COL, patient.getAge());
+        values.put(ROOM_NO_COL, patient.getRoomNumber());
+        values.put(DESCRIPTION_COL, patient.getDesc());
+        values.put(EMAIL_COL, patient.getEmail());
+        values.put(PHONE_COL, patient.getPhone());
+        values.put(BPM_COL, patient.getBpm());
+        values.put(TEMP_COL, patient.getTemperature());
 
         // after adding all values we are passing
         // content values to our table.
@@ -162,6 +175,23 @@ public class DBHandler extends SQLiteOpenHelper{
         db.close();
         return patient;
     }
+
+    public Patient getPatientDetailsByUsername(String userName) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Patient patient = new Patient();
+//        db.rawQuery(TABLE_PATIENT, values, INDEX_COL + " = ?", new String[]{""+patientId});
+        Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_PATIENT+" WHERE "+USER_NAME+"=?", new String[]{userName});
+        if( cursor != null && cursor.moveToFirst() ) {
+            patient.setIndex(cursor.getString(cursor.getColumnIndexOrThrow(INDEX_COL)));
+            patient.setName(cursor.getString(cursor.getColumnIndexOrThrow(NAME_COL)));
+            patient.setGender(cursor.getString(cursor.getColumnIndexOrThrow(GENDER_COL)));
+            patient.setDesc(cursor.getString(cursor.getColumnIndexOrThrow(DESCRIPTION_COL)));
+        }
+        cursor.close();
+        db.close();
+        return patient;
+    }
+
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // this method is called to check if the table exists already.

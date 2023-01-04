@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 //import org.eclipse.paho.android.service.MqttAndroidClient;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private List<Patient> patientList;
     private DBHandler dbHandler;
+    private Button register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         patientList = dbHandler.getAllUser();
+        register = findViewById(R.id.registerButton);
 
 //        patientList.add(new Patient("12341234","Sweda Larsson",01,31,"this is test","Female", R.drawable.old_women_1,98));
 //        patientList.add(new Patient("56782345","Mark Karlsson",02,34,"this is test", "Male", R.drawable.old_man_1,91));
@@ -58,6 +61,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent openSetPin = new Intent(MainActivity.this, PatientProfile.class);
                 openSetPin.putExtra("patient_id", adapter.getItem(i).getIndex());
                 startActivity(openSetPin);
+            }
+        });
+
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, PatientRegisterActivity.class));
             }
         });
         //connect();

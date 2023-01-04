@@ -42,7 +42,6 @@ public class RegisterActivity extends AppCompatActivity {
 
                 // on below line we are calling a method to add new
                 // course to sqlite data and pass all our values to it.
-                dbHandler.addNewPatient("poornima","test");
                 dbHandler.updatePatient(patient);
 
                 // after adding the data we are displaying a toast message.

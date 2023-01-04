@@ -38,12 +38,20 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/user_id"
+            android:id="@+id/gender"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Helth Care Unit Name" />
+            android:hint="Gender" />
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Age" />
 
         <EditText
             android:id="@+id/email"
@@ -64,22 +72,28 @@
             android:hint="Mobile Number" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/bpm"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
             android:ems="10"
-            android:hint="Password" />
+            android:hint="BPM" />
 
         <EditText
-            android:id="@+id/repassword"
+            android:id="@+id/temp"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
             android:ems="10"
-            android:hint="Re Enter Password" />
+            android:hint="Body Temperature" />
+
+        <EditText
+            android:id="@+id/desc"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Description" />
 
         <Button
             android:id="@+id/button"
@@ -88,7 +102,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#266f82"
-            android:text="Sign Up" />
+            android:text="Register" />
 
 
 
