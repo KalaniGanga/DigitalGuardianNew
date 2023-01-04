@@ -20,7 +20,7 @@
                 android:orientation="vertical"
                 android:layout_width="300dp"
                 android:layout_height="match_parent">
-                <TextView
+                <EditText
                     android:id="@+id/name"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
@@ -40,40 +40,40 @@
                             android:layout_width="100dp"
                             android:textStyle="bold"
                             android:textSize="20dp"
-                            android:text="Room" />
+                            android:text="Room No - " />
                         <TextView
                             android:id="@+id/age"
                             android:layout_height="wrap_content"
                             android:layout_width="100dp"
                             android:textStyle="bold"
                             android:textSize="20dp"
-                            android:text="Age" />
+                            android:text="Age - " />
                         <TextView
                             android:id="@+id/index"
                             android:layout_height="wrap_content"
                             android:layout_width="100dp"
                             android:textStyle="bold"
                             android:textSize="20dp"
-                            android:text="ID"/>
+                            android:text="ID - "/>
                     </LinearLayout>
                     <LinearLayout android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:orientation="vertical">
-                        <TextView
-                            android:id="@+id/room1"
+                        <EditText
+                            android:id="@+id/roomNo"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
                             android:textSize="20dp"
                             android:text="- 01"
                             android:layout_width="wrap_content"/>
-                        <TextView
-                            android:id="@+id/age1"
+                        <EditText
+                            android:id="@+id/patientAge"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
                             android:textSize="20dp"
                             android:text="- 81"
                             android:layout_width="wrap_content"/>
-                        <TextView
+                        <EditText
                             android:id="@+id/index1"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
@@ -124,8 +124,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/bpm1"
+                <EditText
+                    android:id="@+id/bpmDisplay"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textColor="#4F22B5"
@@ -134,8 +134,8 @@
                     android:textAlignment="center"
                     android:layout_width="195dp"
                     android:gravity="center_horizontal" />
-                <TextView
-                    android:id="@+id/temp1"
+                <EditText
+                    android:id="@+id/tempDisplay"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:textAlignment="center"
@@ -158,9 +158,9 @@
                 android:textSize="20dp"
                 android:text="Physical Condition"
                 android:layout_width="match_parent"/>
-            <TextView
+            <EditText
                 android:layout_marginLeft="15dp"
-                android:id="@+id/phycon1"
+                android:id="@+id/phycondition"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
                 android:text="Physical health is defined as the condition of your body, taking into consideration everything from the absence of disease to fitness level. Physical health is critical for overall well-being, and can be affected by: Lifestyle: diet, level of physical activity, and behaviour (for instance, smoking);"

@@ -12,11 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PatientAdapter extends ArrayAdapter<Patient> {
-    private ArrayList<Patient> patientList;
+    private List<Patient> patientList;
 
-    public PatientAdapter(@NonNull Context context, int resource, ArrayList<Patient> patientList) {
+    public PatientAdapter(@NonNull Context context, int resource, List<Patient> patientList) {
         super(context, resource, patientList);
         this.patientList = patientList;
     }
@@ -51,4 +52,7 @@ public class PatientAdapter extends ArrayAdapter<Patient> {
         return convertView;
     }
 
+    public Patient getItem(int position) {
+        return patientList.get(position);
+    }
 }

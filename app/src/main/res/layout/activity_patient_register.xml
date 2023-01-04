@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:ems="10"
-            android:hint="User Name"
+            android:hint="Full Name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.919"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,11 +39,29 @@
 
         <EditText
             android:id="@+id/user_id"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:ems="10"
-            android:hint="Patient id" />
+            android:hint="Helth Care Unit Name" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:hint="Email" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone"
+            android:hint="Mobile Number" />
 
         <EditText
             android:id="@+id/password"
