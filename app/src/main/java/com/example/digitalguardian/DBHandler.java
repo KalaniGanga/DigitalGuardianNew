@@ -106,7 +106,10 @@ public class DBHandler extends SQLiteOpenHelper{
                 NAME_COL,
                 GENDER_COL,
                 DESCRIPTION_COL,
-                ROOM_NO_COL
+                ROOM_NO_COL,
+                TEMP_COL,
+                BPM_COL,
+                AGE_COL
         };
         // sorting orders
         String sortOrder =
@@ -129,7 +132,10 @@ public class DBHandler extends SQLiteOpenHelper{
                 user.setName(cursor.getString(cursor.getColumnIndexOrThrow(NAME_COL)));
                 user.setGender(cursor.getString(cursor.getColumnIndexOrThrow(GENDER_COL)));
                 user.setDesc(cursor.getString(cursor.getColumnIndexOrThrow(DESCRIPTION_COL)));
-//                user.setRoomNumber(Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(ROOM_NO_COL))));
+                user.setRoomNumber(Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(ROOM_NO_COL))));
+                user.setTemperature(Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(TEMP_COL))));
+                user.setBpm(Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(BPM_COL))));
+                user.setAge(Integer.parseInt(cursor.getString(cursor.getColumnIndexOrThrow(AGE_COL))));
                 // Adding user record to list
                 userList.add(user);
             } while (cursor.moveToNext());
