@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RgbConverter rgbConverter = new RgbConverter();
+                System.out.println("Testinggggg " + rgbConverter.getColorNameFromRgb(255,0,0));
                 startActivity(new Intent(MainActivity.this, PatientRegisterActivity.class));
             }
         });
