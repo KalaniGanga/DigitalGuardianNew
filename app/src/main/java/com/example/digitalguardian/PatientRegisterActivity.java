@@ -63,7 +63,6 @@ public class PatientRegisterActivity extends AppCompatActivity {
                 bpm.setText("");
                 temp.setText("");
                 desc.setText("");
-//                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
             }
         });
     }

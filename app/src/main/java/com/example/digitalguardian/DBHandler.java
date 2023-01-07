@@ -10,13 +10,11 @@ import java.util.List;
 
 public class DBHandler extends SQLiteOpenHelper{
     // creating a constant variables for our database.
-    // below variable is for our database name.
     private static final String DB_NAME = "healthcaredb";
 
     // below int is our database version
     private static final int DB_VERSION = 1;
 
-    // below variable is for our table name.
     private static final String TABLE_PATIENT = "patent";
 
     private static final String INDEX_COL = "id";
@@ -32,7 +30,7 @@ public class DBHandler extends SQLiteOpenHelper{
     private static final String USER_NAME = "userName";
     private static final String PASSWORD = "password";
 
-    // creating a constructor for our database handler.
+    // creating a constructor for database handler.
     public DBHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -40,10 +38,6 @@ public class DBHandler extends SQLiteOpenHelper{
     // below method is for creating a database by running a sqlite query
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // on below line we are creating
-        // an sqlite query and we are
-        // setting our column names
-        // along with their data types.
         String query = "CREATE TABLE " + TABLE_PATIENT + " ("
                 + INDEX_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + NAME_COL + " TEXT,"
@@ -58,20 +52,13 @@ public class DBHandler extends SQLiteOpenHelper{
                 + USER_NAME + " TEXT,"
                 + PASSWORD + " TEXT)";
 
-        // at last we are calling a exec sql
         // method to execute above sql query
         db.execSQL(query);
     }
 
-    // this method is use to add new course to our sqlite database.
     public void addNewPatient(Patient patient) {
 
-        // on below line we are creating a variable for
-        // our sqlite database and calling writable method
-        // as we are writing data in our database.
         SQLiteDatabase db = this.getWritableDatabase();
-
-        // on below line we are creating a
         // variable for content values.
         ContentValues values = new ContentValues();
 
@@ -86,16 +73,13 @@ public class DBHandler extends SQLiteOpenHelper{
         values.put(TEMP_COL, patient.getTemperature());
 
         // after adding all values we are passing
-        // content values to our table.
+        // content values patient table.
         db.insert(TABLE_PATIENT, null, values);
-
-        // at last we are closing our
-        // database after adding database.
         db.close();
     }
 
     /**
-     * This method is to fetch all user and return the list of user records
+     * This method is to fetch all patients and return the list of patients records
      *
      * @return list
      */
@@ -147,17 +131,13 @@ public class DBHandler extends SQLiteOpenHelper{
     }
 
     /**
-     * This method to update user record
+     * This method to update patient record
      *
      * @param user
      */
     public void updatePatient(Patient user) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-//        values.put(NAME_COL, user.getName());
-//        values.put(GENDER_COL, user.getGender());
-//        values.put(DESCRIPTION_COL, user.getDesc());
-//        values.put(ROOM_NO_COL, user.getRoomNumber());
         values.put(USER_NAME, user.getUserName());
         values.put(PASSWORD, user.getPassword());
         // updating row
@@ -185,7 +165,6 @@ public class DBHandler extends SQLiteOpenHelper{
     public Patient getPatientDetailsByUsername(String userName) {
         SQLiteDatabase db = this.getWritableDatabase();
         Patient patient = new Patient();
-//        db.rawQuery(TABLE_PATIENT, values, INDEX_COL + " = ?", new String[]{""+patientId});
         Cursor cursor = db.rawQuery("SELECT * FROM "+TABLE_PATIENT+" WHERE "+USER_NAME+"=?", new String[]{userName});
         if( cursor != null && cursor.moveToFirst() ) {
             patient.setIndex(cursor.getString(cursor.getColumnIndexOrThrow(INDEX_COL)));
