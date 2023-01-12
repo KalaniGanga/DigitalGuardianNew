@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String patientUserName = userName.getText().toString();
-                if(patientUserName.equals("Admin")){
+                if(patientUserName.toUpperCase().equals("ADMIN")){
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 }else {
                     Intent openSetPin = new Intent(LoginActivity.this, PatientProfile.class);
