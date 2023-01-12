@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PatientRegisterActivity extends AppCompatActivity {
     private Button register;
-    private EditText userName,gender,age,email,phone,bpm,temp,desc;
+    private EditText userName,gender,age,email,phone,bpm,temp,desc,roomNo;
     private DBHandler dbHandler;
 
     @Override
@@ -27,6 +27,7 @@ public class PatientRegisterActivity extends AppCompatActivity {
         bpm = findViewById(R.id.bpm);
         temp = findViewById(R.id.temp);
         desc = findViewById(R.id.desc);
+        roomNo = findViewById(R.id.roomNo);
 
         dbHandler = new DBHandler(PatientRegisterActivity.this);
 
@@ -43,6 +44,7 @@ public class PatientRegisterActivity extends AppCompatActivity {
                 patient.setBpm(Integer.parseInt(bpm.getText().toString()));
                 patient.setTemperature(Integer.parseInt(temp.getText().toString()));
                 patient.setDesc(desc.getText().toString());
+                patient.setRoomNumber(Integer.parseInt(roomNo.getText().toString()));
 
                 // validating if the text fields are empty or not.
 //                if (courseName.isEmpty() && courseTracks.isEmpty() && courseDuration.isEmpty() && courseDescription.isEmpty()) {
@@ -63,6 +65,7 @@ public class PatientRegisterActivity extends AppCompatActivity {
                 bpm.setText("");
                 temp.setText("");
                 desc.setText("");
+                roomNo.setText("");
             }
         });
     }
