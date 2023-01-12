@@ -22,7 +22,7 @@
         <!-- android:name=".LoginActivity" -->
         <!-- android:theme="@style/Theme.AppCompat.NoActionBar" /> -->
         <activity android:name=".PatientProfile" />
-        <activity android:name=".PatientRegisterActivity" />
+        <activity android:name=".PatientRegisterActivity" android:theme="@style/Theme.AppCompat.NoActionBar"/>
 
         <service android:name="org.eclipse.paho.android.service.MqttService" />
 

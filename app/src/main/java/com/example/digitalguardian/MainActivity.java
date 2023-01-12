@@ -2,6 +2,8 @@ package com.example.digitalguardian;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +13,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 //import org.eclipse.paho.android.service.MqttAndroidClient;
+import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.IMqttToken;
@@ -23,12 +26,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-//    private MqttAndroidClient client;
+    AlertDialog.Builder builder;
+    private MqttAndroidClient client;
     private static final String SERVER_URI = "tcp://test.mosquitto.org:1883";
     private static final String TAG = "MainActivity";
     private List<Patient> patientList;
     private DBHandler dbHandler;
     private Button register;
+    private String msg;
+    private String title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
         patientList = dbHandler.getAllUser();
         register = findViewById(R.id.registerButton);
-
-//        patientList.add(new Patient("12341234","Sweda Larsson",01,31,"this is test","Female", R.drawable.old_women_1,98));
-//        patientList.add(new Patient("56782345","Mark Karlsson",02,34,"this is test", "Male", R.drawable.old_man_1,91));
-//        patientList.add(new Patient("90126745","Lucas Jonsson",03,37,"this is test","Male", R.drawable.old_man_2,92));
-//        patientList.add(new Patient("12341234","Sweda Larsson",01,31,"this is test","Female", R.drawable.old_women_1,101));
-//        patientList.add(new Patient("56782345","Mark Karlsson",02,34,"this is test", "Male", R.drawable.old_man_1,90));
-//        patientList.add(new Patient("90126745","Lucas Jonsson",03,37,"this is test","Male", R.drawable.old_man_2,109));
-//        System.out.println(patientList);
 
         //setting adapter and listview
         PatientAdapter adapter = new PatientAdapter(getApplicationContext(),
@@ -68,12 +66,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 RgbConverter rgbConverter = new RgbConverter();
-                System.out.println("Testinggggg " + rgbConverter.getColorNameFromRgb(255,0,0));
                 startActivity(new Intent(MainActivity.this, PatientRegisterActivity.class));
             }
         });
-        //connect();
 
+        //connect();
 
 //        client.setCallback(new MqttCallbackExtended() {
 //            @Override
@@ -96,12 +93,15 @@ public class MainActivity extends AppCompatActivity {
 //                    Exception {
 //                String newMessage = new String(message.getPayload());
 //                System.out.println("Incoming message: " + newMessage);
-//
-//                 /* add code here to interact with elements
-//                 (text views, buttons)
-//                 using data from newMessage
-//                 */
-//
+//                if (newMessage.equals(1)) {
+//                    title = "Emergency !!";
+//                    msg = "Room number 01 Patient has an emergency. Please go to him";
+//                }else if(newMessage.equals(2)){
+//                    title = "Notification !!";
+//                    msg = "Room number 01 Patient needs you now. Please go to him";
+//                }else{
+//                    msg = "";
+//                }
 //
 //            }
 //            @Override
@@ -109,16 +109,33 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
+//        builder = new AlertDialog.Builder(MainActivity.this);
+//        builder.setMessage(msg)
+//                .setCancelable(false);
+//        //Creating dialog box
+//        AlertDialog alert = builder.create();
+//
+//        alert.setOnShowListener(new DialogInterface.OnShowListener() {
+//            @Override
+//            public void onShow(DialogInterface dialogInterface) {
+//                alert.getWindow().setBackgroundDrawableResource(R.color.red);
+//
+//
+//            }
+//        });
+//        //Setting the title manually
+//        alert.setTitle(title);
+//        alert.show();
+
+
     }
 
 //    private void connect(){
 //        String clientId = MqttClient.generateClientId();
-//        client =
-//                new MqttAndroidClient(this.getApplicationContext(), SERVER_URI,
+//        client = new MqttAndroidClient(this.getApplicationContext(), SERVER_URI,
 //                        clientId);
 //        try {
 //            IMqttToken token = client.connect();
-//            System.out.println("!!!!!!!!!!!!!!!!!!!!!!");
 //            System.out.println(token.getActionCallback());
 //            token.setActionCallback(new IMqttActionListener() {
 //                @Override
@@ -126,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
 //                    // We are connected
 //                    Log.d(TAG, "onSuccess");
 //                    System.out.println(TAG + " Success. Connected to " + SERVER_URI);
-//                    System.out.println("@@@@@@@@@@@@@@@");
 //                }
 //                @Override
 //                public void onFailure(IMqttToken asyncActionToken, Throwable exception)
@@ -135,17 +151,15 @@ public class MainActivity extends AppCompatActivity {
 //                    Log.d(TAG, "onFailure");
 //                    System.out.println(TAG + " Oh no! Failed to connect to " +
 //                            SERVER_URI);
-//                    System.out.println("%%%%%%%%%%%%%%%%%%%");
 //                }
 //            });
 //        } catch (MqttException e) {
-//            System.out.println("**********************");
 //            System.out.println(e.getMessage());
 //            e.printStackTrace();
 //        }
 //    }
-//
-//
+
+
 //    private void subscribe(String topicToSubscribe) {
 //        final String topic = topicToSubscribe;
 //        int qos = 1;

@@ -47,7 +47,7 @@ public class PatientAdapter extends ArrayAdapter<Patient> {
         genderTextView.setText(patientList.get(position).getGender());
         indexTextView.setText(patientList.get(position).getIndex());
         bpmTextView.setText(String.valueOf(patientList.get(position).getBpm()) );
-        srcTextView.setImageResource(patientList.get(position).getSrc());
+        srcTextView.setImageResource(R.drawable.profile);
 
         return convertView;
     }

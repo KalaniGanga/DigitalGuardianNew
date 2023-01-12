@@ -14,7 +14,8 @@
         android:orientation="vertical" >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="180dp"
+            android:layout_marginBottom="50dp"
             android:orientation="horizontal">
             <LinearLayout
                 android:orientation="vertical"
@@ -24,7 +25,7 @@
                     android:id="@+id/name"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:textSize="30dp"
+                    android:textSize="25dp"
                     android:text="Sweda Larsson"
                     android:layout_width="300dp"/>
                 <LinearLayout
@@ -36,24 +37,24 @@
                         android:orientation="vertical">
                         <TextView
                             android:id="@+id/room"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
                             android:layout_width="100dp"
                             android:textStyle="bold"
-                            android:textSize="20dp"
+                            android:textSize="17dp"
                             android:text="Room No - " />
                         <TextView
                             android:id="@+id/age"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
                             android:layout_width="100dp"
                             android:textStyle="bold"
-                            android:textSize="20dp"
+                            android:textSize="17dp"
                             android:text="Age - " />
                         <TextView
                             android:id="@+id/index"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
                             android:layout_width="100dp"
                             android:textStyle="bold"
-                            android:textSize="20dp"
+                            android:textSize="17dp"
                             android:text="ID - "/>
                     </LinearLayout>
                     <LinearLayout android:layout_width="wrap_content"
@@ -61,23 +62,23 @@
                         android:orientation="vertical">
                         <EditText
                             android:id="@+id/roomNo"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
                             android:textStyle="bold"
-                            android:textSize="20dp"
+                            android:textSize="17dp"
                             android:text="- 01"
                             android:layout_width="wrap_content"/>
                         <EditText
                             android:id="@+id/patientAge"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
                             android:textStyle="bold"
-                            android:textSize="20dp"
+                            android:textSize="17dp"
                             android:text="- 81"
                             android:layout_width="wrap_content"/>
                         <EditText
                             android:id="@+id/index1"
-                            android:layout_height="wrap_content"
+                            android:layout_height="40dp"
                             android:textStyle="bold"
-                            android:textSize="20dp"
+                            android:textSize="17dp"
                             android:text="- 12341234"
                             android:layout_width="wrap_content"/>
                     </LinearLayout>
@@ -87,13 +88,12 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:src="@drawable/old_women_1"/>
+                android:layout_height="180dp"
+                android:src="@drawable/profile"/>
 
 
         </LinearLayout>
         <LinearLayout
-            android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">

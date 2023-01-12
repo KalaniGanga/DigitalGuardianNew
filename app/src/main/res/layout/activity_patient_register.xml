@@ -19,7 +19,7 @@
             android:layout_marginTop="10dp"
             android:id="@+id/head"
             android:layout_height="wrap_content"
-            android:textSize="38dp"
+            android:textSize="35dp"
             android:textColor="@color/white"
             android:text="New Patient Registration"
             android:fontFamily="sans-serif-condensed"
@@ -29,7 +29,7 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="Full Name"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
 
         <EditText
             android:id="@+id/gender"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -47,7 +47,7 @@
 
         <EditText
             android:id="@+id/age"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -55,7 +55,7 @@
 
         <EditText
             android:id="@+id/email"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -64,7 +64,7 @@
 
         <EditText
             android:id="@+id/phone"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -73,7 +73,7 @@
 
         <EditText
             android:id="@+id/bpm"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -81,7 +81,7 @@
 
         <EditText
             android:id="@+id/temp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -89,7 +89,7 @@
 
         <EditText
             android:id="@+id/desc"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -98,7 +98,7 @@
         <Button
             android:id="@+id/button"
             android:layout_gravity="center"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#266f82"
